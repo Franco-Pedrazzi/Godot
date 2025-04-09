@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6ul110xy5bv4"]
+
+[ext_resource type="Script" uid="uid://du150gy0qggnm" path="res://objetos/items/bullet/bullet.gd" id="1_gaatl"]
+[ext_resource type="Texture2D" uid="uid://bv3kv31qownnj" path="res://sprites/characters/mundo 0/items/Blue_circle.webp" id="2_y107f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4esww"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hkomy"]
+radius = 36.0139
+
+[node name="Bullet" type="RigidBody2D"]
+script = ExtResource("1_gaatl")
+
+[node name="BlueCircle" type="Sprite2D" parent="."]
+scale = Vector2(0.101971, 0.101761)
+texture = ExtResource("2_y107f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4esww")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_hkomy")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]

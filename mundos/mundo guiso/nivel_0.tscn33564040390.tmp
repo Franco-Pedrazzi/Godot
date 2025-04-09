@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://3t484pnhsnsy"]
+
+[ext_resource type="Texture2D" uid="uid://dnjekoa24v2cs" path="res://sprites/mundo 0/5.png" id="1_qrxap"]
+[ext_resource type="PackedScene" uid="uid://cpri1ktmj56ec" path="res://objetos/characters/mateo/mateo.tscn" id="2_gxecd"]
+[ext_resource type="PackedScene" uid="uid://b1yonn763q8be" path="res://objetos/characters/shooter/shooter.tscn" id="4_x1hqg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnqe0"]
+size = Vector2(1250.15, 3.19486)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxecd"]
+size = Vector2(20, 122)
+
+[node name="Nivel 0" type="Node2D"]
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(699, 281)
+texture = ExtResource("1_qrxap")
+
+[node name="Mateo" parent="." instance=ExtResource("2_gxecd")]
+position = Vector2(12, 333)
+scale = Vector2(0.360002, 0.320002)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(492.584, 239)
+scale = Vector2(1.00562, 25.3532)
+shape = SubResource("RectangleShape2D_qnqe0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(490, 439.5)
+scale = Vector2(1.00562, 25.3532)
+shape = SubResource("RectangleShape2D_qnqe0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-126, 336)
+shape = SubResource("RectangleShape2D_gxecd")
+
+[node name="Shooter" parent="." instance=ExtResource("4_x1hqg")]
+position = Vector2(489, 343)

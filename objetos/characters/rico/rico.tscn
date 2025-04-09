@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpri1ktmj56ec"]
+
+[ext_resource type="Script" uid="uid://peelch2cdapf" path="res://objetos/characters/rico/rico.gd" id="1_s4shh"]
+[ext_resource type="Texture2D" uid="uid://bwyb7hv4e7ukv" path="res://icon.svg" id="2_d5vvr"]
+[ext_resource type="Script" uid="uid://bfcbu6prktj4e" path="res://objetos/characters/rico/lives.gd" id="3_jjldi"]
+
+[sub_resource type="Animation" id="Animation_tphce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.868056, 0.927734)]
+}
+
+[sub_resource type="Animation" id="Animation_25u6k"]
+resource_name = "attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.868056, 0.927734), Vector2(0.868056, 0.427735)]
+}
+
+[sub_resource type="Animation" id="Animation_77krh"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.868056, 0.927734)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_660fa"]
+_data = {
+&"RESET": SubResource("Animation_tphce"),
+&"attack": SubResource("Animation_25u6k"),
+&"idle": SubResource("Animation_77krh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywkl"]
+size = Vector2(59.0718, 131.728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77krh"]
+size = Vector2(150, 150)
+
+[node name="Mateo" type="CharacterBody2D"]
+scale = Vector2(0.36, 0.32)
+collision_mask = 15
+script = ExtResource("1_s4shh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Icon")
+libraries = {
+&"": SubResource("AnimationLibrary_660fa")
+}
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-06, 4.05312e-06)
+scale = Vector2(0.868056, 0.927734)
+texture = ExtResource("2_d5vvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.12857, 0.650886)
+shape = SubResource("RectangleShape2D_iywkl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -74)
+zoom = Vector2(3, 3)
+
+[node name="liveBox" type="HBoxContainer" parent="."]
+offset_left = 122.0
+offset_top = -391.0
+offset_right = 514.0
+offset_bottom = -216.0
+scale = Vector2(1, 0.715973)
+script = ExtResource("3_jjldi")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1.88103, 2.15338)
+collision_mask = 15
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1.7604e-06, 3.22467e-06)
+scale = Vector2(0.393983, 0.369411)
+shape = SubResource("RectangleShape2D_77krh")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
