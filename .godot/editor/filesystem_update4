@@ -1,0 +1,9 @@
+res://mundos/La Pampa/La_Pampa.tscn
+res://objetos/Bg/Background.tscn
+res://mundos/menu/Menu.tscn
+res://objetos/characters/rico/rico.tscn
+res://mundos/menu/menu.gd
+res://mundos/mundo guiso/nivel_0.tscn
+res://objetos/effecks/smoke.tscn
+res://mundos/La Pampa/la_pampa.gd
+res://objetos/effecks/Smoke.tscn
