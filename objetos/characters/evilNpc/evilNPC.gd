@@ -65,7 +65,6 @@ func _on_area_2d_2_body_entered(body):
 
 		elif esperar:
 			animations.play("attack")
-			esperar = true
 			isColliding = true
 			await get_tree().create_timer(0.2).timeout
 			if isColliding:

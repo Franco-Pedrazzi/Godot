@@ -1,9 +1,13 @@
-res://mundos/La Pampa/La_Pampa.tscn
-res://objetos/Bg/Background.tscn
 res://mundos/menu/Menu.tscn
-res://objetos/characters/rico/rico.tscn
-res://mundos/menu/menu.gd
-res://mundos/mundo guiso/nivel_0.tscn
-res://objetos/effecks/smoke.tscn
-res://mundos/La Pampa/la_pampa.gd
-res://objetos/effecks/Smoke.tscn
+res://mundos/La Pampa/La_Pampa.tscn
+res://Esenarios/La Pampa/La_Pampa.tscn
+res://objetos/characters/Venado/Venado.tscn
+res://objetos/characters/Venado/venado.gd
+res://Esenarios/La Pampa/la_pampa.gd
+res://Esenarios/menu/Menu.tscn
+res://objetos/effecs/smoke.tscn
+res://objetos/characters/Mati el Fiero/Marty.tscn
+res://objetos/characters/evilNpc/evilGodottscn.tscn
+res://objetos/characters/Mati el Fiero/Mati.gd
+res://objetos/items/bullet/bullet.gd
+res://objetos/characters/evilNpc/evilNPC.gd
