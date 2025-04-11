@@ -28,9 +28,11 @@ func _physics_process(delta: float) -> void:
 	if Shooting and player != null and "lives" in player and player.lives > 0:
 		Shooting = false
 		sprite.play("disparo")
+		disparar()
 		await get_tree().create_timer(1).timeout
 		if firstShoot:
 			Shooting = true
+
 
 	if player != null and not evading:
 		if scapeTime:

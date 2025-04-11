@@ -340,7 +340,6 @@ shape = SubResource("CircleShape2D_q1p3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox"]
 position = Vector2(-2.45441, 2)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_q1p3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
