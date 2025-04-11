@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkgqo03lokno5"
-path="res://.godot/imported/Boss_1 Disparando.png-289ce51b17eb330a16e7f9043c917075.ctex"
+uid="uid://bfdqnlehd7qii"
+path="res://.godot/imported/Boss_1 Saltando.png-9b621dcf3aa78dd9e63781fcd3c01402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objetos/characters/boss/Boss_1 Disparando.png"
-dest_files=["res://.godot/imported/Boss_1 Disparando.png-289ce51b17eb330a16e7f9043c917075.ctex"]
+source_file="res://objetos/boss/Boss_1 Saltando.png"
+dest_files=["res://.godot/imported/Boss_1 Saltando.png-9b621dcf3aa78dd9e63781fcd3c01402.ctex"]
 
 [params]
 

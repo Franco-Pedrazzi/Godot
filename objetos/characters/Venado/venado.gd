@@ -3,9 +3,9 @@ extends CharacterBody2D
 @export var DamageType = "normalDamage"
 @export var action = "terminada"
 @export var type = "evilNpc"
+@export var charge = 0.8
 
 @onready var animations = $AnimatedSprite2D
-@export var vel=velocity
 var targetPlayer = null
 var attaking = false
 var SPEED = 2.5
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		animations.scale.x=((targetPlayer.position.x - position.x)/abs(targetPlayer.position.x - position.x))*-1
 	else:
 		move = Vector2.ZERO
-		if attaking:
+		if !attaking:
 			animations.play("default")
 	#Se elimina su nodo si se queda sin vidas
 	if lives <= 0:
@@ -49,11 +49,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_2_body_entered(body):
 	stop = false
 	isColliding = true
-	isMoving=false
+	
 	if body == targetPlayer:
 		await get_tree().create_timer(0.3).timeout
-		if body.attacking:		
-			
+		isMoving=false
+		if body.attacking and ((targetPlayer.position.x - position.x)/abs(targetPlayer.position.x - position.x))*-1==body.ExportDirectionX:		
 			if stop == false:
 				lives -= 1
 				animations.play("default")
@@ -66,20 +66,24 @@ func _on_area_2d_2_body_entered(body):
 				await get_tree().create_timer(0.3).timeout
 				
 		await get_tree().create_timer(0.2).timeout
+		isMoving=false 
 		if isColliding and !stop:
+			await get_tree().create_timer(1).timeout
 			attaking=true
 			animations.play("Attack")
-			await get_tree().create_timer(0.27).timeout
+			await get_tree().create_timer(charge).timeout
 			attaking=false
 			animations.play("default")
 			await get_tree().create_timer(0.2).timeout
 			if isColliding:
 				_on_area_2d_2_body_entered(body)
-
+	
 
 	await get_tree().create_timer(0.25).timeout
 	if isColliding:
 		_on_area_2d_2_body_entered(body)
+	else:
+		isMoving=true
 
 
 

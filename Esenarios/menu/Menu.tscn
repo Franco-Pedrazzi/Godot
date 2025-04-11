@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg7c2b6816rr3"]
+[gd_scene load_steps=3 format=3 uid="uid://bg7c2b6816rr3"]
 
 [ext_resource type="Script" uid="uid://c47l3oybtlofk" path="res://Esenarios/menu/menu.gd" id="1_0x6pj"]
+[ext_resource type="Texture2D" uid="uid://tqxvqdmrxlv1" path="res://sprites/Backgrounds/Menu.png" id="2_uaed2"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,11 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0x6pj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 644.0
-color = Color(0.513726, 1, 1, 1)
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(1596.5, 1349)
+scale = Vector2(0.562988, 0.313477)
+texture = ExtResource("2_uaed2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -24,13 +24,17 @@ anchor_left = 0.316
 anchor_top = 0.189
 anchor_right = 0.631
 anchor_bottom = 0.629
-offset_left = 0.967987
-offset_top = -0.472008
-offset_right = 0.827942
-offset_bottom = -0.832031
+offset_left = 1070.97
+offset_top = 1002.53
+offset_right = 1070.83
+offset_bottom = 1002.17
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Play"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1021, 1026)
+anchor_mode = 0
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

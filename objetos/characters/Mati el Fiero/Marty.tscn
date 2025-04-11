@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cpri1ktmj56ec"]
+[gd_scene load_steps=41 format=3 uid="uid://cpri1ktmj56ec"]
 
 [ext_resource type="Script" uid="uid://peelch2cdapf" path="res://objetos/characters/Mati el Fiero/Mati.gd" id="1_s4shh"]
 [ext_resource type="Texture2D" uid="uid://d3snhayj7hraj" path="res://sprites/characters/Mati/MODELO DEL GAUCHO PARADO.png" id="2_1ha5g"]
@@ -6,6 +6,71 @@
 [ext_resource type="Texture2D" uid="uid://coj8cgml1rwrx" path="res://sprites/characters/Mati/MODELO DEL GAUCHO CORRIENDO.png" id="2_50yjx"]
 [ext_resource type="Script" uid="uid://bfcbu6prktj4e" path="res://objetos/characters/Mati el Fiero/lives.gd" id="3_jjldi"]
 [ext_resource type="Texture2D" uid="uid://bev06a8twi725" path="res://sprites/characters/Mati/MODELO DEL GAUCHO pegando.png" id="3_kl5qr"]
+
+[sub_resource type="Animation" id="Animation_7j0ut"]
+resource_name = "default"
+
+[sub_resource type="Animation" id="Animation_kl5qr"]
+resource_name = "Invulnerability"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.458824), Color(1, 1, 1, 1), Color(1, 1, 1, 0.458824), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 15]
+}
+
+[sub_resource type="Animation" id="Animation_n08l8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animations:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5tgj"]
+_data = {
+&"Invulnerability": SubResource("Animation_kl5qr"),
+&"RESET": SubResource("Animation_n08l8"),
+&"default": SubResource("Animation_7j0ut")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jys68"]
 atlas = ExtResource("2_7j0ut")
@@ -226,18 +291,26 @@ size = Vector2(59.0718, 131.728)
 size = Vector2(150, 150)
 
 [node name="Mati" type="CharacterBody2D"]
+visibility_layer = 512
 scale = Vector2(0.868056, 0.927734)
+collision_layer = 16
 collision_mask = 15
 script = ExtResource("1_s4shh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y5tgj")
+}
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(3.456, -77.1935)
 scale = Vector2(0.893281, 0.849193)
 sprite_frames = SubResource("SpriteFrames_jys68")
-animation = &"Punch"
-frame_progress = 0.741155
+autoplay = "default"
+frame_progress = 0.437697
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1.152, -74.3748)
 scale = Vector2(1.00611, 1.3555)
 shape = SubResource("RectangleShape2D_iywkl")
@@ -254,6 +327,7 @@ scale = Vector2(1, 0.715973)
 script = ExtResource("3_jjldi")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(-1.152, -74.3748)
 scale = Vector2(1.67691, 4.48453)
 collision_mask = 15

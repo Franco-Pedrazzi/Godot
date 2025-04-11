@@ -3,11 +3,12 @@ extends CharacterBody2D
 @export var lives = 3
 @export var type = "player"
 @export var attacking = false
+@export var ExportDirectionX=0
 @onready var animations = $Animations
-
+@onready var PhysicsAnimations=$AnimationPlayer
 var SPEED = 600
 var Dash=1200
-var canReceiveDamage = false
+var cantReceiveDamage = false
 var isMoving = true
 var isColliding = false
 
@@ -20,6 +21,7 @@ func _physics_process(delta):
 
 	#Si se da que directionX es 1 o -1, pone la velocidad en la direccion dada
 	if directionX and isMoving and !attacking:
+		ExportDirectionX=directionX
 		velocity.x = directionX * SPEED
 		if SPEED!=Dash and SPEED!=sqrt((Dash**2)/2):
 			animations.play("Run")
@@ -40,7 +42,7 @@ func _physics_process(delta):
 		#Si no recibe input y se encuentra en movimiento, reduce la velocidad hasta llegar a 0
 		velocity.y = move_toward(velocity.y, 0, SPEED/3)
 		
-	if 	directionX and directionY and (SPEED==300 or SPEED==700) :
+	if 	directionX and directionY and (SPEED==600 or SPEED==700) :
 		SPEED=sqrt((SPEED**2)/2)
 		
 	if 	!directionX and !directionY and !attacking and !Input.is_action_just_pressed("Dash"):
@@ -60,7 +62,7 @@ func _physics_process(delta):
 		SPEED=Dash
 		animations.play("Dash")
 		await get_tree().create_timer(0.15).timeout
-		SPEED=300
+		SPEED=600
 		attacking=false	
 	#Se encarga de permitir continuar moviendose incluso cuando se alcanza una pared
 	
@@ -72,7 +74,7 @@ func _on_interaction_area_body_entered(body):
 	#Chequea cuando se entra en contacto con un cuerpo
 	
 	#Estado por default
-	canReceiveDamage=false
+	cantReceiveDamage=false
 	isColliding = true
 	
 	#Cheque si el cuerpo en el que se esta en contacto es diferente al de Rico
@@ -83,22 +85,23 @@ func _on_interaction_area_body_entered(body):
 			
 			if body.DamageType=="normalDamage" or body.DamageType=="instantDamage":
 				if body.DamageType!="instantDamage":
-					await get_tree().create_timer(0.1).timeout
+					await get_tree().create_timer(body.charge).timeout
 					if attacking:
 						await get_tree().create_timer(0.27).timeout
-					await get_tree().create_timer(0.27).timeout
-				if canReceiveDamage == false:
-					canReceiveDamage = true
+					await get_tree().create_timer(1).timeout
+				if !cantReceiveDamage:
+					cantReceiveDamage = true
 					lives -= 1
-									
+					PhysicsAnimations.play("Invulnerability")
 					var angle=(body.position - position).angle()
 					
 					var direction = Vector2.RIGHT.rotated(angle)  # Mueve hacia la rotación actual
-					velocity = body.vel
+					velocity = direction * SPEED*-1
 					
 					#Paraliza
 					isMoving = false
 					await get_tree().create_timer(0.25).timeout
+					PhysicsAnimations.play("default")
 					isMoving = true
 					
 				#Chequea si se acabaron las vidas para recargar la escena actual
@@ -114,5 +117,5 @@ func _on_interaction_area_body_entered(body):
 
 
 func _on_interaction_area_body_exited(body: Node2D) -> void:
-	canReceiveDamage = true
+	cantReceiveDamage = true
 	isColliding = false

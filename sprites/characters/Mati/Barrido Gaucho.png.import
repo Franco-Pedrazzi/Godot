@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6u5kfycijqk1"
-path="res://.godot/imported/menuBg.jpeg-bd277ba0a9a6589ee1ca3bb3c27fac10.ctex"
+uid="uid://cxq2x5rf8sr0c"
+path="res://.godot/imported/Barrido Gaucho.png-28fbc63aab39781381ed1f803e6dc160.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Backgrounds/menuBg.jpeg"
-dest_files=["res://.godot/imported/menuBg.jpeg-bd277ba0a9a6589ee1ca3bb3c27fac10.ctex"]
+source_file="res://sprites/characters/Mati/Barrido Gaucho.png"
+dest_files=["res://.godot/imported/Barrido Gaucho.png-28fbc63aab39781381ed1f803e6dc160.ctex"]
 
 [params]
 
