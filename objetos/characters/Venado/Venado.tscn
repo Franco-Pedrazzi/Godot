@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bo2iw730ipj5i"]
+[gd_scene load_steps=32 format=3 uid="uid://bo2iw730ipj5i"]
 
 [ext_resource type="Script" uid="uid://p52ip2wbqfu1" path="res://objetos/characters/Venado/venado.gd" id="1_wm0xe"]
 [ext_resource type="Texture2D" uid="uid://dert0sbm27wr8" path="res://sprites/characters/Pampa/Venado/Venado_Infectado atacando.png" id="2_wm0xe"]
@@ -126,7 +126,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -157,22 +157,105 @@ size = Vector2(34, 23.789)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oosj2"]
 size = Vector2(55.1627, 41.8224)
 
+[sub_resource type="Animation" id="Animation_wm0xe"]
+resource_name = "default"
+
+[sub_resource type="Animation" id="Animation_x6ql7"]
+resource_name = "Hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.333333, 0.633333, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.999999, 0.837828, 0.811957, 0.882353), Color(1, 1, 1, 1), Color(0.999999, 0.837828, 0.811957, 0.882353), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f5aqa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w6kc4"]
+resource_name = "Dead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.393063, 0, 0.0051195, 0.882353)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6kc4"]
+_data = {
+&"Dead": SubResource("Animation_w6kc4"),
+&"Hurt": SubResource("Animation_x6ql7"),
+&"RESET": SubResource("Animation_f5aqa"),
+&"default": SubResource("Animation_wm0xe")
+}
+
 [node name="Venado" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 9
+collision_mask = 8
 script = ExtResource("1_wm0xe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1pk73")
 autoplay = "default"
-frame_progress = 0.884581
+frame_progress = 0.366476
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 0.145671)
 scale = Vector2(4.42887, -6.41827)
 shape = SubResource("RectangleShape2D_u5x76")
 
 [node name="DetectionZone" type="Area2D" parent="."]
+visible = false
 scale = Vector2(3.98154, 3.08364)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
@@ -181,12 +264,19 @@ scale = Vector2(-16.3302, -20.5218)
 shape = SubResource("CircleShape2D_gm2mo")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+visible = false
 scale = Vector2(6.04556, 6.35814)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-2.65548e-06, 0.257964)
 scale = Vector2(0.737411, 0.915377)
 shape = SubResource("RectangleShape2D_oosj2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w6kc4")
+}
+autoplay = "default"
 
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_area_2d_2_body_entered"]

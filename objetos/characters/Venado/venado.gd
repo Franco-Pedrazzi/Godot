@@ -5,10 +5,12 @@ extends CharacterBody2D
 @export var type = "evilNpc"
 @export var charge = 0.8
 
+@onready var PhysicsAnimations = $AnimationPlayer
 @onready var animations = $AnimatedSprite2D
+var playersLives=3
 var targetPlayer = null
 var attaking = false
-var SPEED = 2.5
+var SPEED = 3
 var isColliding = false
 var stop = false
 var lives = 3
@@ -18,18 +20,22 @@ var move = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	
 	#Si tiene su objetivo definido, va a caminar en direccion a este
-	if targetPlayer != null  and isMoving:
+	if targetPlayer != null  and isMoving and !attaking:
 		move=position.direction_to(targetPlayer.position)
 		animations.play("Run")
+		velocity=Vector2i(0,0)
 		animations.scale.x=((targetPlayer.position.x - position.x)/abs(targetPlayer.position.x - position.x))*-1
 	else:
 		move = Vector2.ZERO
 		if !attaking:
 			animations.play("default")
+		else:
+			velocity=Vector2i(0,0)
 	#Se elimina su nodo si se queda sin vidas
 	if lives <= 0:
+		PhysicsAnimations.play("Dead")
+		await get_tree().create_timer(0.5).timeout
 		queue_free()
-		
 	else:
 		move = move.normalized()*SPEED
 		move = move_and_collide(move)
@@ -42,6 +48,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body != self and "type" in body:
 		if body.type == "player" :
+			playersLives=body.lives
 			targetPlayer = body
 			animations.play("Run")
 
@@ -50,9 +57,11 @@ func _on_area_2d_2_body_entered(body):
 	stop = false
 	isColliding = true
 	
-	if body == targetPlayer:
+	if body == targetPlayer and playersLives>0:
+
 		await get_tree().create_timer(0.3).timeout
 		isMoving=false
+
 		if body.attacking and ((targetPlayer.position.x - position.x)/abs(targetPlayer.position.x - position.x))*-1==body.ExportDirectionX:		
 			if stop == false:
 				lives -= 1
@@ -64,19 +73,19 @@ func _on_area_2d_2_body_entered(body):
 				await get_tree().create_timer(0.25).timeout
 				velocity = Vector2i(0,0)
 				await get_tree().create_timer(0.3).timeout
-				
-		await get_tree().create_timer(0.2).timeout
-		isMoving=false 
-		if isColliding and !stop:
-			await get_tree().create_timer(1).timeout
-			attaking=true
-			animations.play("Attack")
-			await get_tree().create_timer(charge).timeout
-			attaking=false
-			animations.play("default")
+		else:		
 			await get_tree().create_timer(0.2).timeout
-			if isColliding:
-				_on_area_2d_2_body_entered(body)
+			isMoving=false 
+			if isColliding and !stop:
+				await get_tree().create_timer(0.5).timeout
+				attaking=true
+				animations.play("Attack")
+				await get_tree().create_timer(charge).timeout
+				attaking=false
+				animations.play("default")
+				await get_tree().create_timer(0.2).timeout
+				if isColliding:
+					_on_area_2d_2_body_entered(body)
 	
 
 	await get_tree().create_timer(0.25).timeout

@@ -1,17 +1,7 @@
-res://mundos/menu/Menu.tscn
-res://mundos/La Pampa/La_Pampa.tscn
-res://Esenarios/La Pampa/La_Pampa.tscn
-res://objetos/characters/Venado/Venado.tscn
-res://objetos/characters/Venado/venado.gd
-res://Esenarios/La Pampa/la_pampa.gd
 res://Esenarios/menu/Menu.tscn
+res://Esenarios/La Pampa/La_Pampa.tscn
 res://objetos/effecs/smoke.tscn
 res://objetos/characters/Mati el Fiero/Marty.tscn
-res://objetos/characters/evilNpc/evilGodottscn.tscn
+res://objetos/characters/Venado/Venado.tscn
+res://objetos/characters/Venado/venado.gd
 res://objetos/characters/Mati el Fiero/Mati.gd
-res://objetos/items/bullet/bullet.gd
-res://objetos/characters/evilNpc/evilNPC.gd
-res://Esenarios/menu/menu.gd
-res://objetos/characters/Mati el Fiero/attack_area.gd
-res://objetos/boss/boss.gd
-res://objetos/boss/boss.tscn

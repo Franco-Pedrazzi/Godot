@@ -65,7 +65,10 @@ func _physics_process(delta):
 		SPEED=600
 		attacking=false	
 	#Se encarga de permitir continuar moviendose incluso cuando se alcanza una pared
-	
+	if lives <= 0:
+		cantReceiveDamage=true
+		get_tree().reload_current_scene()
+		return 
 	move_and_slide()
 
 
@@ -88,27 +91,24 @@ func _on_interaction_area_body_entered(body):
 					await get_tree().create_timer(body.charge).timeout
 					if attacking:
 						await get_tree().create_timer(0.27).timeout
-					await get_tree().create_timer(1).timeout
+					await get_tree().create_timer(0.5).timeout
 				if !cantReceiveDamage:
 					cantReceiveDamage = true
 					lives -= 1
-					PhysicsAnimations.play("Invulnerability")
-					var angle=(body.position - position).angle()
-					
-					var direction = Vector2.RIGHT.rotated(angle)  # Mueve hacia la rotación actual
-					velocity = direction * SPEED*-1
-					
-					#Paraliza
-					isMoving = false
-					await get_tree().create_timer(0.25).timeout
-					PhysicsAnimations.play("default")
-					isMoving = true
+					if lives>0:
+						PhysicsAnimations.play("Invulnerability")
+						var angle=(body.position - position).angle()
+						var direction = Vector2.RIGHT.rotated(angle)  # Mueve hacia la rotación actual
+						velocity = direction * SPEED*-1
+						isMoving = false
+						await get_tree().create_timer(0.25).timeout
+						PhysicsAnimations.play("default")
+						isMoving = true
 					
 				#Chequea si se acabaron las vidas para recargar la escena actual
 				#Simulando un GAME OVER
-				if lives <= 0:
-					get_tree().reload_current_scene()
-					return 
+				else:
+					return
 				
 		await get_tree().create_timer(0.25).timeout
 		

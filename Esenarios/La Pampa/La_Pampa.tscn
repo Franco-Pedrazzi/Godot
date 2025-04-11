@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://2o7cutwc5o8d"]
+[gd_scene load_steps=7 format=3 uid="uid://2o7cutwc5o8d"]
 
 [ext_resource type="PackedScene" uid="uid://cte3h7vo55776" path="res://objetos/Bg/Background.tscn" id="1_0kfh4"]
 [ext_resource type="Script" uid="uid://k12o5wprxrur" path="res://Esenarios/La Pampa/la_pampa.gd" id="1_iri82"]
 [ext_resource type="PackedScene" uid="uid://cpri1ktmj56ec" path="res://objetos/characters/Mati el Fiero/Marty.tscn" id="2_mw2un"]
-[ext_resource type="PackedScene" uid="uid://b1yonn763q8be" path="res://objetos/characters/shooter/shooter.tscn" id="3_oqyy5"]
 [ext_resource type="PackedScene" uid="uid://2h70gx3fyfaq" path="res://objetos/effecs/smoke.tscn" id="3_tpli7"]
 [ext_resource type="PackedScene" uid="uid://bo2iw730ipj5i" path="res://objetos/characters/Venado/Venado.tscn" id="6_lfqf6"]
 [ext_resource type="PackedScene" uid="uid://b8tmufkwbbeba" path="res://objetos/boss/boss.tscn" id="7_oafpr"]
@@ -26,11 +25,7 @@ layer_0/tile_data = PackedInt32Array(720938, 917504, 28, 786474, 917504, 29, 852
 position = Vector2(-784, 17)
 
 [node name="Mateo" parent="." instance=ExtResource("2_mw2un")]
-position = Vector2(1212, 278)
-collision_layer = 1
-
-[node name="Shooter" parent="." instance=ExtResource("3_oqyy5")]
-position = Vector2(-455, 56)
+position = Vector2(922, 109)
 
 [node name="Venado" parent="." instance=ExtResource("6_lfqf6")]
 position = Vector2(341, -405)
