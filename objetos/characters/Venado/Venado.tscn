@@ -1,13 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://bo2iw730ipj5i"]
+[gd_scene load_steps=31 format=3 uid="uid://bo2iw730ipj5i"]
 
 [ext_resource type="Script" uid="uid://p52ip2wbqfu1" path="res://objetos/characters/Venado/venado.gd" id="1_wm0xe"]
 [ext_resource type="Texture2D" uid="uid://dert0sbm27wr8" path="res://sprites/characters/Pampa/Venado/Venado_Infectado atacando.png" id="2_wm0xe"]
 [ext_resource type="Texture2D" uid="uid://cnxx58f60gkmi" path="res://sprites/characters/Pampa/Venado/Venao_infectado CAMINANDO.png" id="3_x6ql7"]
 [ext_resource type="Texture2D" uid="uid://duhbf3dg30v7l" path="res://sprites/characters/Pampa/Venado/Venao_infectado parado.png" id="4_f5aqa"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w6kc4"]
-atlas = ExtResource("2_wm0xe")
-region = Rect2(0, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iaunp"]
 atlas = ExtResource("2_wm0xe")
@@ -81,9 +77,6 @@ region = Rect2(1280, 0, 320, 320)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w6kc4")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_iaunp")
 }, {
 "duration": 1.0,
@@ -95,7 +88,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jkbee")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 10.0
 }, {
@@ -157,8 +150,33 @@ size = Vector2(34, 23.789)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oosj2"]
 size = Vector2(55.1627, 41.8224)
 
-[sub_resource type="Animation" id="Animation_wm0xe"]
-resource_name = "default"
+[sub_resource type="Animation" id="Animation_w6kc4"]
+resource_name = "Dead"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.393063, 0, 0.0051195, 0.882353)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.2)]
+}
 
 [sub_resource type="Animation" id="Animation_x6ql7"]
 resource_name = "Hurt"
@@ -202,33 +220,8 @@ tracks/1/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_w6kc4"]
-resource_name = "Dead"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.393063, 0, 0.0051195, 0.882353)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.2)]
-}
+[sub_resource type="Animation" id="Animation_wm0xe"]
+resource_name = "default"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w6kc4"]
 _data = {
@@ -245,8 +238,10 @@ script = ExtResource("1_wm0xe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1pk73")
+animation = &"Attack"
 autoplay = "default"
-frame_progress = 0.366476
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

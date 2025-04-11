@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 @onready var PhysicsAnimations = $AnimationPlayer
 @onready var animations = $AnimatedSprite2D
+
 var playersLives=3
 var targetPlayer = null
 var attaking = false
@@ -23,18 +24,17 @@ func _physics_process(delta: float) -> void:
 	if targetPlayer != null  and isMoving and !attaking:
 		move=position.direction_to(targetPlayer.position)
 		animations.play("Run")
-		velocity=Vector2i(0,0)
 		animations.scale.x=((targetPlayer.position.x - position.x)/abs(targetPlayer.position.x - position.x))*-1
 	else:
+		
 		move = Vector2.ZERO
 		if !attaking:
 			animations.play("default")
-		else:
-			velocity=Vector2i(0,0)
+
 	#Se elimina su nodo si se queda sin vidas
 	if lives <= 0:
 		PhysicsAnimations.play("Dead")
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.2).timeout
 		queue_free()
 	else:
 		move = move.normalized()*SPEED
@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 	
-
 
 #Chequea si el jugador entro en el area de deteccion
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -66,24 +65,31 @@ func _on_area_2d_2_body_entered(body):
 			if stop == false:
 				lives -= 1
 				animations.play("default")
+				PhysicsAnimations.play("Hurt")
 				var angle=(body.position - position).angle()
 				var direction = Vector2.RIGHT.rotated(angle)  # Mueve hacia la rotación actual
-				velocity = direction * SPEED*-1*240
-				
+				velocity = direction * SPEED*-1*300
+				isMoving=false
 				await get_tree().create_timer(0.25).timeout
+				PhysicsAnimations.play("Default")
 				velocity = Vector2i(0,0)
 				await get_tree().create_timer(0.3).timeout
+				isMoving=true
 		else:		
-			await get_tree().create_timer(0.2).timeout
 			isMoving=false 
 			if isColliding and !stop:
-				await get_tree().create_timer(0.5).timeout
+				
 				attaking=true
 				animations.play("Attack")
-				await get_tree().create_timer(charge).timeout
-				attaking=false
-				animations.play("default")
-				await get_tree().create_timer(0.2).timeout
+				if animations.get_animation() == "Attack" :
+					while animations.is_playing():
+						await get_tree().create_timer(0.2).timeout
+						if body.attacking:
+							_on_area_2d_2_body_entered(body)
+							return
+					attaking=false
+					animations.play("default")
+					await get_tree().create_timer(0.1).timeout
 				if isColliding:
 					_on_area_2d_2_body_entered(body)
 	
@@ -93,9 +99,7 @@ func _on_area_2d_2_body_entered(body):
 		_on_area_2d_2_body_entered(body)
 	else:
 		isMoving=true
-
-
-
+		
 	
 func _on_interaction_area_body_exited(body: Node2D) -> void:
 	stop = true

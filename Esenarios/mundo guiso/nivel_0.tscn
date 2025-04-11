@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://3t484pnhsnsy"]
 
 [ext_resource type="Texture2D" uid="uid://dnjekoa24v2cs" path="res://sprites/mundo 0/5.png" id="1_qrxap"]
-[ext_resource type="PackedScene" uid="uid://cpri1ktmj56ec" path="res://objetos/characters/rico/rico.tscn" id="2_gxecd"]
+[ext_resource type="PackedScene" uid="uid://cpri1ktmj56ec" path="res://objetos/characters/Mati el Fiero/Mati.tscn" id="2_gxecd"]
 [ext_resource type="PackedScene" uid="uid://b1yonn763q8be" path="res://objetos/characters/shooter/shooter.tscn" id="3_gxecd"]
 [ext_resource type="PackedScene" uid="uid://rk6tkiihhapc" path="res://objetos/characters/evilNpc/evilGodottscn.tscn" id="4_x1hqg"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnqe0"]
 size = Vector2(1250.15, 3.19486)

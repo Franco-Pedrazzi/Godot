@@ -83,16 +83,18 @@ func _on_interaction_area_body_entered(body):
 	#Cheque si el cuerpo en el que se esta en contacto es diferente al de Rico
 	#y si la propiedad "type" existe en el cuerpo (player, enemigo, bullet,etc)
 	if "type" in body and body != self:
-
 		if "DamageType" in body:
-			
 			if body.DamageType=="normalDamage" or body.DamageType=="instantDamage":
 				if body.DamageType!="instantDamage":
-					await get_tree().create_timer(body.charge).timeout
-					if attacking:
-						await get_tree().create_timer(0.27).timeout
 					await get_tree().create_timer(0.5).timeout
-				if !cantReceiveDamage:
+					if body:	
+						if body.animations.get_animation() == "Attack" :
+							while body.animations.is_playing():
+								await get_tree().create_timer(0.2).timeout
+					else:
+						return
+					await get_tree().create_timer(0.5).timeout
+				if !cantReceiveDamage and !attacking:
 					cantReceiveDamage = true
 					lives -= 1
 					if lives>0:

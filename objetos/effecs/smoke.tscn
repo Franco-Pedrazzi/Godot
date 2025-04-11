@@ -41,7 +41,7 @@ _data = {
 }
 
 [node name="Smoke" type="Sprite2D"]
-position = Vector2(121, 47)
+position = Vector2(108, 59)
 rotation = 1.5708
 texture = ExtResource("1_oia7o")
 

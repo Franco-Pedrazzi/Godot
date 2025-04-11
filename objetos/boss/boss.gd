@@ -10,7 +10,7 @@ var SPEED = 2.5
 @export var DamageType = "null"
 @export var type = "evilNpc"
 @export var mapa_limite = Rect2(Vector2(0, 0), Vector2(1024, 768))  # Límites del mapa
-
+@export var lives = 20
 # Acceso directo al AnimatedSprite2D
 @onready var sprite = $AnimatedSprite2D
 
@@ -20,7 +20,6 @@ var scapeTime = false
 var Shooting = false
 var firstShoot = false
 var stop = false
-var lives = 20
 var notStop = true
 var evading = false
 
