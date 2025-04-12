@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1744484080
+::res://::1744498026
 icon.png::CompressedTexture2D/CompressedTexture2D::1356981152794222741::1744241201::1744316604::1::::<><><>0<>0<>730460561b90fdd19b5d64fd56967aa2<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3980238573653568857::1744241201::1744316604::1::::<><><>0<>0<>a2dd9fab7a868c6623cc26c0141ba21c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Esenarios/::1744336852
-::res://Esenarios/La Pampa/::1744485102
+::res://Esenarios/La Pampa/::1744487038
 la_pampa.gd::GDScript/GDScript::757228228296615973::1744408842::0::1::::<>Node2D<><>0<>0<><>::
-La_Pampa.tscn::PackedScene::1925947662961783085::1744485102::0::1::::<><><>0<>0<><>::uid://cte3h7vo55776::::res://objetos/Bg/Background.tscn<>uid://k12o5wprxrur::::res://Esenarios/La Pampa/la_pampa.gd<>uid://cpri1ktmj56ec::::res://objetos/characters/Mati el Fiero/Mati.tscn<>uid://bfs6ioqx5s8ji::::res://objetos/effecs/particles_2d.tscn<>uid://bo2iw730ipj5i::::res://objetos/characters/Venado/Venado.tscn<>uid://8smyftu2ujtr::::res://objetos/characters/Fish/Fish.tscn<>uid://b8tmufkwbbeba::::res://objetos/boss/boss.tscn
+La_Pampa.tscn::PackedScene::1925947662961783085::1744487038::0::1::::<><><>0<>0<><>::uid://cte3h7vo55776::::res://objetos/Bg/Background.tscn<>uid://k12o5wprxrur::::res://Esenarios/La Pampa/la_pampa.gd<>uid://cpri1ktmj56ec::::res://objetos/characters/Mati el Fiero/Mati.tscn<>uid://bfs6ioqx5s8ji::::res://objetos/effecs/particles_2d.tscn<>uid://bo2iw730ipj5i::::res://objetos/characters/Venado/Venado.tscn<>uid://8smyftu2ujtr::::res://objetos/characters/Fish/Fish.tscn<>uid://b8tmufkwbbeba::::res://objetos/boss/boss.tscn
 ::res://Esenarios/menu/::1744479093
 menu.gd::GDScript/GDScript::6875096582642304788::1744335186::0::1::::<>Control<><>0<>0<><>::
 Menu.tscn::PackedScene/PackedScene::2873783586019812762::1744479093::0::1::::<><><>0<>0<><>::uid://c47l3oybtlofk::::res://Esenarios/menu/menu.gd<>uid://tqxvqdmrxlv1::::res://sprites/Backgrounds/Menu.png
@@ -41,8 +41,8 @@ shooter.tscn::PackedScene/PackedScene::4261749671282747594::1744241201::0::1::::
 ::res://objetos/characters/Venado/::1744479093
 venado.gd::GDScript/GDScript::1116418462909735142::1744416428::0::1::::<>CharacterBody2D<><>0<>0<><>::
 Venado.tscn::PackedScene/PackedScene::3425329442542113344::1744479093::0::1::::<><><>0<>0<><>::uid://p52ip2wbqfu1::::res://objetos/characters/Venado/venado.gd<>uid://dert0sbm27wr8::::res://sprites/characters/Pampa/Venado/Venado_Infectado atacando.png<>uid://cnxx58f60gkmi::::res://sprites/characters/Pampa/Venado/Venao_infectado CAMINANDO.png<>uid://duhbf3dg30v7l::::res://sprites/characters/Pampa/Venado/Venao_infectado parado.png
-::res://objetos/effecs/::1744485911
-particles_2d.tscn::PackedScene::2776420975712961934::1744485911::0::1::::<><><>0<>0<><>::uid://0dpess53bf7i::::res://sprites/effecs/terreno luciernaga.png<>uid://dxmuhhurbdqo0::::res://sprites/effecs/Light.webp
+::res://objetos/effecs/::1744487003
+particles_2d.tscn::PackedScene::2776420975712961934::1744487003::0::1::::<><><>0<>0<><>::uid://0dpess53bf7i::::res://sprites/effecs/terreno luciernaga.png
 smoke.tscn::PackedScene/PackedScene::1911537363071867124::1744479093::0::1::::<><><>0<>0<><>::uid://d3eqtrn75d6gt::::res://sprites/effecs/smoke.png
 ::res://objetos/items/::1744336852
 ::res://objetos/items/bullet/::1744479094
@@ -52,7 +52,7 @@ bullet.tscn::PackedScene/PackedScene::6990698798113841915::1744479093::0::1::::<
 ::res://sprites/Backgrounds/::1744473129
 Menu.png::CompressedTexture2D/CompressedTexture2D::1368052911270079000::1744338387::1744338386::1::::<><><>0<>0<>2956f9707908fdcbdea5194f913cc674<>res://.godot/imported/Menu.png-307399ca8a3f25a245afbe91823f403a.ctex::
 tilemap.png::CompressedTexture2D/CompressedTexture2D::6000569417869243704::1744316489::1744316605::1::::<><><>0<>0<>4dcaa471f327b3e8a3c4644cea7f6925<>res://.godot/imported/tilemap.png-a55a8b3443d6aed063f7a0382abeb7c1.ctex::
-::res://sprites/Backgrounds/drive-download-20250412T012958Z-001/::1744484083
+::res://sprites/Backgrounds/drive-download-20250412T012958Z-001/::1744486943
 terreno agua 2.png::CompressedTexture2D/CompressedTexture2D::7960970929545172458::1744486939::1744486943::1::::<><><>0<>0<>c3e0aaeaf8615d770343f6427cf145d0<>res://.godot/imported/terreno agua 2.png-facca7e5d530163e5c0f087b5911f39e.ctex::
 terreno agua contaminada.png::CompressedTexture2D/CompressedTexture2D::3480132974321652970::1744473082::1744473196::1::::<><><>0<>0<>6cf0237e79fe1de7069a178e6d5cf5f2<>res://.godot/imported/terreno agua contaminada.png-3ce94ec0211d2233a0d143ce94cc8040.ctex::
 terreno agua menos detallada .png::CompressedTexture2D/CompressedTexture2D::3283336866425504::1744473082::1744473196::1::::<><><>0<>0<>684a138b8f2fc38088f1f07760295ab9<>res://.godot/imported/terreno agua menos detallada .png-6a5d295598d8a3d5df16b5d1921cbcdb.ctex::
@@ -75,7 +75,7 @@ Venao_infectado parado.png::CompressedTexture2D/CompressedTexture2D::85775606896
 ::res://sprites/characters/River/Fish/::1744419955
 PESCADO RADIACTIVO CHE.png::CompressedTexture2D/CompressedTexture2D::6237607792172868590::1744419952::1744419955::1::::<><><>0<>0<>432381d8585c92f8adf8192db6509425<>res://.godot/imported/PESCADO RADIACTIVO CHE.png-c3527b7f911268054208f4d90eea3613.ctex::
 ::res://sprites/effecs/::1744485899
-Light.webp::CompressedTexture2D::8799605227548843645::1744485875::1744485899::1::::<><><>0<>0<>1eb7e1178c4aec88703f7208bfe93399<>res://.godot/imported/Light.webp-c9662980ce9ab75867a1215a61bdf0b3.ctex::
+Light.webp::CompressedTexture2D/CompressedTexture2D::8799605227548843645::1744485875::1744485899::1::::<><><>0<>0<>1eb7e1178c4aec88703f7208bfe93399<>res://.godot/imported/Light.webp-c9662980ce9ab75867a1215a61bdf0b3.ctex::
 smoke.jpg::CompressedTexture2D/CompressedTexture2D::7724913287358903199::1744317514::1744318763::0::::<><><>0<>0<>5cb651800dade26241da269b5489e9e4<>::
 smoke.png::CompressedTexture2D/CompressedTexture2D::9133813500402492947::1744318777::1744318779::1::::<><><>0<>0<>d6c5c9e0827a13cf4721c89c54eaa930<>res://.godot/imported/smoke.png-05ce5d41114a9a53619a60bc0c17eeda.ctex::
 terreno luciernaga.png::CompressedTexture2D/CompressedTexture2D::1761833096907413860::1744473299::1744473305::1::::<><><>0<>0<>478fd12f42bd668b631f6f8926efb23d<>res://.godot/imported/terreno luciernaga.png-46c20059f5678d303f7440668b361efa.ctex::
