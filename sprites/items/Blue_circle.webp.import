@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b18qa2o3jul30"
-path="res://.godot/imported/terreno piedras escalada.png-5b97814a3f6f0c17dbf978069b995a23.ctex"
+uid="uid://bv3kv31qownnj"
+path="res://.godot/imported/Blue_circle.webp-ddfe631254193dc10bd1281f444692d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno piedras escalada.png"
-dest_files=["res://.godot/imported/terreno piedras escalada.png-5b97814a3f6f0c17dbf978069b995a23.ctex"]
+source_file="res://sprites/items/Blue_circle.webp"
+dest_files=["res://.godot/imported/Blue_circle.webp-ddfe631254193dc10bd1281f444692d5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n38gn4e41fko"
-path="res://.godot/imported/terreno pasto noche.png-113d719c326defbdc1dff84f577c88cc.ctex"
+uid="uid://buct7gonama"
+path="res://.godot/imported/terreno agua menos detallada .png-6a5d295598d8a3d5df16b5d1921cbcdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno pasto noche.png"
-dest_files=["res://.godot/imported/terreno pasto noche.png-113d719c326defbdc1dff84f577c88cc.ctex"]
+source_file="res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno agua menos detallada .png"
+dest_files=["res://.godot/imported/terreno agua menos detallada .png-6a5d295598d8a3d5df16b5d1921cbcdb.ctex"]
 
 [params]
 

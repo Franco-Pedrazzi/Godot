@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var player = null
 
 #Designa la velocidad
-var SPEED = 250
+var SPEED = 600
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.RIGHT.rotated(rotation)  # Mueve hacia la rotación actual

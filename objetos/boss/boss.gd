@@ -10,7 +10,7 @@ var SPEED = 2.5
 @export var DamageType = "null"
 @export var type = "evilNpc"
 @export var mapa_limite = Rect2(Vector2(0, 0), Vector2(1024, 768))  # Límites del mapa
-@export var lives = 20
+@export var lives = 3
 # Acceso directo al AnimatedSprite2D
 @onready var sprite = $AnimatedSprite2D
 
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		Shooting = false
 		sprite.play("disparo")
 		disparar()
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		if firstShoot:
 			Shooting = true
 
@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = player.position.x < position.x
 
 	# Salto evasivo automático si tiene menos de 10 vidas
-	if lives < 10 and not evading and not sprite.is_playing("salto"):
+	if lives < 2 and not evading and not sprite.is_playing() and not sprite.get_animation()=="salto":
 		hacer_salto_evasion()
 
 
@@ -113,6 +113,8 @@ func disparar():
 	bullet.player = player
 	bullet.position = position
 	bullet.rotation = angle
+	bullet.scale = Vector2i(1,1)  
+	bullet.look_at(position)
 	get_parent().add_child(bullet)
 
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6ul110xy5bv4"]
 
 [ext_resource type="Script" uid="uid://du150gy0qggnm" path="res://objetos/items/bullet/bullet.gd" id="1_gaatl"]
-[ext_resource type="Texture2D" uid="uid://bv3kv31qownnj" path="res://sprites/characters/mundo 0/items/Blue_circle.webp" id="2_y107f"]
+[ext_resource type="Texture2D" uid="uid://c6j5exlsuweqn" path="res://sprites/items/Bullet.png" id="2_gaatl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4esww"]
 radius = 10.439
@@ -14,9 +14,12 @@ scale = Vector2(0.120001, 0.119999)
 collision_layer = 4
 script = ExtResource("1_gaatl")
 
-[node name="BlueCircle" type="Sprite2D" parent="."]
-scale = Vector2(0.101971, 0.101761)
-texture = ExtResource("2_y107f")
+[node name="Bullet" type="Sprite2D" parent="."]
+modulate = Color(0.225675, 0.768421, 0, 1)
+position = Vector2(-13.6073, 2.91214)
+rotation = -1.58072
+scale = Vector2(0.333558, 0.404)
+texture = ExtResource("2_gaatl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(-1.59657, 1.66652)

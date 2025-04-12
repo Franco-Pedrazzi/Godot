@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ibcrcfa34mw"
-path="res://.godot/imported/terreno agua verde.png-196b4983b53f378519da99d97250ef07.ctex"
+uid="uid://0dpess53bf7i"
+path="res://.godot/imported/terreno luciernaga.png-46c20059f5678d303f7440668b361efa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno agua verde.png"
-dest_files=["res://.godot/imported/terreno agua verde.png-196b4983b53f378519da99d97250ef07.ctex"]
+source_file="res://sprites/effecs/terreno luciernaga.png"
+dest_files=["res://.godot/imported/terreno luciernaga.png-46c20059f5678d303f7440668b361efa.ctex"]
 
 [params]
 

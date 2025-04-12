@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0lyhb0hlbfgw"
-path="res://.godot/imported/terreno agua.png-2077118f4dcbbfba6a2a7f95c8becd62.ctex"
+uid="uid://dxmuhhurbdqo0"
+path="res://.godot/imported/Light.webp-c9662980ce9ab75867a1215a61bdf0b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno agua.png"
-dest_files=["res://.godot/imported/terreno agua.png-2077118f4dcbbfba6a2a7f95c8becd62.ctex"]
+source_file="res://sprites/effecs/Light.webp"
+dest_files=["res://.godot/imported/Light.webp-c9662980ce9ab75867a1215a61bdf0b3.ctex"]
 
 [params]
 

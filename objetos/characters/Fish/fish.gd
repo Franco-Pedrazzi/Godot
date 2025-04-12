@@ -10,7 +10,6 @@ var firstShoot=false
 
 func _physics_process(delta: float) -> void:
 	if player != null :
-		animations.play("Run")
 		animations.scale.x=((player.position.x - position.x)/abs(player.position.x - position.x))*-1
 	if Shooting:
 		if player!=null:
@@ -22,7 +21,7 @@ func _physics_process(delta: float) -> void:
 						while animations.frame!=4:
 							await get_tree().create_timer(0.2).timeout
 						disparar()
-					await get_tree().create_timer(1).timeout
+					await get_tree().create_timer(4).timeout
 					if firstShoot==true:
 						Shooting=true
 		
@@ -44,7 +43,9 @@ func disparar():
 	var angle = (player.position - position).angle()
 	bullet.player = player  
 	bullet.position = position  
+	bullet.scale = Vector2i(1,1)  
 	bullet.rotation = angle
+	bullet.look_at(position)
 	get_parent().add_child(bullet)
 	
 

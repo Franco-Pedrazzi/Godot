@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfs6ioqx5s8ji"]
+
+[ext_resource type="Texture2D" uid="uid://0dpess53bf7i" path="res://sprites/effecs/terreno luciernaga.png" id="1_7gbrc"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7gbrc"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 128.0
+spread = 20.69
+gravity = Vector3(0, 9.8, 0)
+scale_min = 0.0
+scale_max = 0.2
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+texture = ExtResource("1_7gbrc")
+speed_scale = 3.6
+process_material = SubResource("ParticleProcessMaterial_7gbrc")
