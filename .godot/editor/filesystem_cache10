@@ -1,52 +1,64 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1744407417
+::res://::1744423212
 icon.png::CompressedTexture2D/CompressedTexture2D::1356981152794222741::1744241201::1744316604::1::::<><><>0<>0<>730460561b90fdd19b5d64fd56967aa2<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3980238573653568857::1744241201::1744316604::1::::<><><>0<>0<>a2dd9fab7a868c6623cc26c0141ba21c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Esenarios/::1744336852
-::res://Esenarios/La Pampa/::1744408693
-la_pampa.gd::GDScript/GDScript::757228228296615973::1744326739::0::1::::<>Node2D<><>0<>0<><>::
-La_Pampa.tscn::PackedScene::1925947662961783085::1744408808::0::1::::<><><>0<>0<><>::uid://cte3h7vo55776::::res://objetos/Bg/Background.tscn<>uid://k12o5wprxrur::::res://Esenarios/La Pampa/la_pampa.gd<>uid://cpri1ktmj56ec::::res://objetos/characters/Mati el Fiero/Marty.tscn<>uid://2h70gx3fyfaq::::res://objetos/effecs/smoke.tscn<>uid://bo2iw730ipj5i::::res://objetos/characters/Venado/Venado.tscn<>uid://b8tmufkwbbeba::::res://objetos/boss/boss.tscn
-::res://Esenarios/menu/::1744408693
+::res://Esenarios/La Pampa/::1744423298
+la_pampa.gd::GDScript::757228228296615973::1744408842::0::1::::<>Node2D<><>0<>0<><>::
+La_Pampa.tscn::PackedScene::1925947662961783085::1744423298::0::1::::<><><>0<>0<><>::uid://cte3h7vo55776::::res://objetos/Bg/Background.tscn<>uid://k12o5wprxrur::::res://Esenarios/La Pampa/la_pampa.gd<>uid://cpri1ktmj56ec::::res://objetos/characters/Mati el Fiero/Mati.tscn<>uid://2h70gx3fyfaq::::res://objetos/effecs/smoke.tscn<>uid://bo2iw730ipj5i::::res://objetos/characters/Venado/Venado.tscn<>uid://8smyftu2ujtr::::res://objetos/characters/Fish/Fish.tscn<>uid://b8tmufkwbbeba::::res://objetos/boss/boss.tscn
+::res://Esenarios/menu/::1744421371
 menu.gd::GDScript/GDScript::6875096582642304788::1744335186::0::1::::<>Control<><>0<>0<><>::
-Menu.tscn::PackedScene::2873783586019812762::1744408693::0::1::::<><><>0<>0<><>::uid://c47l3oybtlofk::::res://Esenarios/menu/menu.gd<>uid://tqxvqdmrxlv1::::res://sprites/Backgrounds/Menu.png
-::res://Esenarios/mundo guiso/::1744336927
-nivel_0.tscn::PackedScene/PackedScene::2006332070131089936::1744316249::0::1::::<><><>0<>0<><>::uid://dnjekoa24v2cs::::res://sprites/mundo 0/5.png<>uid://cpri1ktmj56ec::::res://objetos/characters/rico/rico.tscn<>uid://b1yonn763q8be::::res://objetos/characters/shooter/shooter.tscn<>uid://rk6tkiihhapc::::res://objetos/characters/evilNpc/evilGodottscn.tscn
+Menu.tscn::PackedScene::2873783586019812762::1744421371::0::1::::<><><>0<>0<><>::uid://c47l3oybtlofk::::res://Esenarios/menu/menu.gd<>uid://tqxvqdmrxlv1::::res://sprites/Backgrounds/Menu.png
+::res://Esenarios/mundo guiso/::1744408808
+nivel_0.tscn::PackedScene/PackedScene::2006332070131089936::1744408808::0::1::::<><><>0<>0<><>::uid://dnjekoa24v2cs::::res://sprites/mundo 0/5.png<>uid://cpri1ktmj56ec::::res://objetos/characters/Mati el Fiero/Mati.tscn<>uid://b1yonn763q8be::::res://objetos/characters/shooter/shooter.tscn<>uid://rk6tkiihhapc::::res://objetos/characters/evilNpc/evilGodottscn.tscn
 ::res://objetos/::1744336921
-::res://objetos/Bg/::1744336927
-Background.tscn::PackedScene/PackedScene::6116401197745352367::1744316489::0::1::::<><><>0<>0<><>::uid://crqyrb4um86um::::res://sprites/Backgrounds/tilemap.png
-::res://objetos/boss/::1744336957
-boss.gd::GDScript/GDScript::2369834398848104105::1744336859::0::1::::<>CharacterBody2D<><>0<>0<><>::
-boss.tscn::PackedScene/PackedScene::4742640299932355466::1744336859::0::1::::<><><>0<>0<><>::uid://8073dhmlb2nl::::res://objetos/characters/boss/boss.gd<>uid://capgw0siqgnuw::::res://objetos/characters/boss/Boss_1 Caminando.png<>uid://dkgqo03lokno5::::res://objetos/characters/boss/Boss_1 Disparando.png<>uid://jxjqvrbsd3pf::::res://objetos/characters/boss/Boss_1 parado.png<>uid://bfdqnlehd7qii::::res://objetos/characters/boss/Boss_1 Saltando.png
+::res://objetos/Bg/::1744423681
+Background.tscn::PackedScene::6116401197745352367::1744423681::0::1::::<><><>0<>0<><>::uid://dloma7qlkgmte::::res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno agua 2.png
+::res://objetos/boss/::1744421371
+boss.gd::GDScript::2369834398848104105::1744413682::0::1::::<>CharacterBody2D<><>0<>0<><>::
+boss.tscn::PackedScene::4742640299932355466::1744421371::0::1::::<><><>0<>0<><>::uid://8073dhmlb2nl::::res://objetos/boss/boss.gd<>uid://capgw0siqgnuw::::res://objetos/boss/Boss_1 Caminando.png<>uid://dkgqo03lokno5::::res://objetos/boss/Boss_1 Disparando.png<>uid://jxjqvrbsd3pf::::res://objetos/boss/Boss_1 parado.png<>uid://bfdqnlehd7qii::::res://objetos/boss/Boss_1 Saltando.png<>uid://cxug1q32v40yl::::res://objetos/boss/live bar.tscn
 Boss_1 Caminando.png::CompressedTexture2D/CompressedTexture2D::4804211964394954658::1744336859::1744336957::1::::<><><>0<>0<>bd7906147310f0ac612e87e7b036af4f<>res://.godot/imported/Boss_1 Caminando.png-d2686a3aec2d9cc0af2341a790b103aa.ctex::
 Boss_1 Disparando.png::CompressedTexture2D/CompressedTexture2D::7874534583840101822::1744336859::1744336957::1::::<><><>0<>0<>0d37a9ce68ab37c78020d5dbe87e62c9<>res://.godot/imported/Boss_1 Disparando.png-21eab53a02ab4bf281dafe82ea32aa0c.ctex::
 Boss_1 parado.png::CompressedTexture2D/CompressedTexture2D::679756436044711179::1744336859::1744336957::1::::<><><>0<>0<>e596914b387308a18c43aee8ff4c756e<>res://.godot/imported/Boss_1 parado.png-e3803f09fc6ccaccb3411f93eb199710.ctex::
 Boss_1 Saltando.png::CompressedTexture2D/CompressedTexture2D::2744553306609872104::1744336859::1744336957::1::::<><><>0<>0<>b424c38419d19111b771fcdedd5b3b48<>res://.godot/imported/Boss_1 Saltando.png-9b621dcf3aa78dd9e63781fcd3c01402.ctex::
-::res://objetos/characters/::1744336890
+live bar.tscn::PackedScene::6428883943624383543::1744414096::0::1::::<><><>0<>0<><>::uid://cg55lybvmlt0n::::res://sprites/characters/mundo 0/shooter.png<>uid://re3ntsauv8hu::::res://objetos/boss/live_bar.gd
+live_bar.gd::GDScript::1203192169758737006::1744414096::0::1::::<>Node2D<><>0<>0<><>::
+::res://objetos/characters/::1744419975
 ::res://objetos/characters/evilNpc/::1744336927
 evilGodottscn.tscn::PackedScene/PackedScene::1215770814212151848::1744331534::0::1::::<><><>0<>0<><>::uid://tu8h1mkwyruk::::res://objetos/characters/evilNpc/evilNPC.gd<>uid://b71st307vtk1v::::res://sprites/characters/mundo 0/evil godot.jpeg
 evilNPC.gd::GDScript/GDScript::1376893130151912406::1744330198::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://objetos/characters/Mati el Fiero/::1744408693
+::res://objetos/characters/Fish/::1744421371
+fish.gd::GDScript::8387108242701164317::1744421366::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Fish.tscn::PackedScene::2354162395508681035::1744421371::0::1::::<><><>0<>0<><>::uid://drq1phgbjc4sf::::res://objetos/characters/Fish/fish.gd<>uid://cu4sqvkdipxji::::res://sprites/characters/River/Fish/PESCADO RADIACTIVO CHE.png
+::res://objetos/characters/Mati el Fiero/::1744421371
 attack_area.gd::GDScript/GDScript::7466940373564545556::1744336640::0::1::::<>Area2D<><>0<>0<><>::
 lives.gd::GDScript/GDScript::2741591742444691354::1744241201::0::1::::<>HBoxContainer<><>0<>0<><>::
-Marty.tscn::PackedScene::5861301165502615622::1744408693::0::1::::<><><>0<>0<><>::uid://peelch2cdapf::::res://objetos/characters/Mati el Fiero/Mati.gd<>uid://d3snhayj7hraj::::res://sprites/characters/Mati/MODELO DEL GAUCHO PARADO.png<>uid://0scxlb4r0anu::::res://sprites/characters/Mati/MODELO DEL GAUCHO dash.png<>uid://coj8cgml1rwrx::::res://sprites/characters/Mati/MODELO DEL GAUCHO CORRIENDO.png<>uid://bfcbu6prktj4e::::res://objetos/characters/Mati el Fiero/lives.gd<>uid://bev06a8twi725::::res://sprites/characters/Mati/MODELO DEL GAUCHO pegando.png
-Mati.gd::GDScript::1061352794380623323::1744408612::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Mati.gd::GDScript::1061352794380623323::1744416882::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Mati.tscn::PackedScene::5861301165502615622::1744421371::0::1::::<><><>0<>0<><>::uid://peelch2cdapf::::res://objetos/characters/Mati el Fiero/Mati.gd<>uid://d3snhayj7hraj::::res://sprites/characters/Mati/MODELO DEL GAUCHO PARADO.png<>uid://0scxlb4r0anu::::res://sprites/characters/Mati/MODELO DEL GAUCHO dash.png<>uid://coj8cgml1rwrx::::res://sprites/characters/Mati/MODELO DEL GAUCHO CORRIENDO.png<>uid://bfcbu6prktj4e::::res://objetos/characters/Mati el Fiero/lives.gd<>uid://bev06a8twi725::::res://sprites/characters/Mati/MODELO DEL GAUCHO pegando.png
 ::res://objetos/characters/shooter/::1744336927
 shooter.gd::GDScript/GDScript::1333637359770073496::1744241201::0::1::::<>CharacterBody2D<><>0<>0<><>::
 shooter.tscn::PackedScene/PackedScene::4261749671282747594::1744241201::0::1::::<><><>0<>0<><>::uid://taa2vhi8lxto::::res://objetos/characters/shooter/shooter.gd<>uid://cg55lybvmlt0n::::res://sprites/characters/mundo 0/shooter.png
-::res://objetos/characters/Venado/::1744408693
-venado.gd::GDScript::1116418462909735142::1744408679::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Venado.tscn::PackedScene::3425329442542113344::1744408693::0::1::::<><><>0<>0<><>::uid://p52ip2wbqfu1::::res://objetos/characters/Venado/venado.gd<>uid://dert0sbm27wr8::::res://sprites/characters/Pampa/Venado/Venado_Infectado atacando.png<>uid://cnxx58f60gkmi::::res://sprites/characters/Pampa/Venado/Venao_infectado CAMINANDO.png<>uid://duhbf3dg30v7l::::res://sprites/characters/Pampa/Venado/Venao_infectado parado.png
-::res://objetos/effecs/::1744408693
-smoke.tscn::PackedScene::1911537363071867124::1744408693::0::1::::<><><>0<>0<><>::uid://d3eqtrn75d6gt::::res://sprites/effecs/smoke.png
+::res://objetos/characters/Venado/::1744421371
+venado.gd::GDScript::1116418462909735142::1744416428::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Venado.tscn::PackedScene::3425329442542113344::1744421371::0::1::::<><><>0<>0<><>::uid://p52ip2wbqfu1::::res://objetos/characters/Venado/venado.gd<>uid://dert0sbm27wr8::::res://sprites/characters/Pampa/Venado/Venado_Infectado atacando.png<>uid://cnxx58f60gkmi::::res://sprites/characters/Pampa/Venado/Venao_infectado CAMINANDO.png<>uid://duhbf3dg30v7l::::res://sprites/characters/Pampa/Venado/Venao_infectado parado.png
+::res://objetos/effecs/::1744421371
+smoke.tscn::PackedScene::1911537363071867124::1744421371::0::1::::<><><>0<>0<><>::uid://d3eqtrn75d6gt::::res://sprites/effecs/smoke.png
 ::res://objetos/items/::1744336852
 ::res://objetos/items/bullet/::1744336927
 bullet.gd::GDScript/GDScript::8618579253449038382::1744328859::0::1::::<>CharacterBody2D<><>0<>0<><>::
 bullet.tscn::PackedScene/PackedScene::6990698798113841915::1744316249::0::1::::<><><>0<>0<><>::uid://du150gy0qggnm::::res://objetos/items/bullet/bullet.gd<>uid://bv3kv31qownnj::::res://sprites/characters/mundo 0/items/Blue_circle.webp
 ::res://sprites/::1744336852
-::res://sprites/Backgrounds/::1744338410
+::res://sprites/Backgrounds/::1744421447
 Menu.png::CompressedTexture2D/CompressedTexture2D::1368052911270079000::1744338387::1744338386::1::::<><><>0<>0<>2956f9707908fdcbdea5194f913cc674<>res://.godot/imported/Menu.png-307399ca8a3f25a245afbe91823f403a.ctex::
 tilemap.png::CompressedTexture2D/CompressedTexture2D::6000569417869243704::1744316489::1744316605::1::::<><><>0<>0<>4dcaa471f327b3e8a3c4644cea7f6925<>res://.godot/imported/tilemap.png-a55a8b3443d6aed063f7a0382abeb7c1.ctex::
-::res://sprites/characters/::1744336852
+::res://sprites/Backgrounds/drive-download-20250412T012958Z-001/::1744425009
+terreno agua 2.png::CompressedTexture2D/CompressedTexture2D::7960970929545172458::1744425097::1744425099::1::::<><><>0<>0<>c3e0aaeaf8615d770343f6427cf145d0<>res://.godot/imported/terreno agua 2.png-facca7e5d530163e5c0f087b5911f39e.ctex::
+terreno agua verde.png::CompressedTexture2D/CompressedTexture2D::2262623203244963618::1744421440::1744422543::1::::<><><>0<>0<>11da10cf05ccba8e6adecb8b4598c21b<>res://.godot/imported/terreno agua verde.png-196b4983b53f378519da99d97250ef07.ctex::
+terreno agua.png::CompressedTexture2D/CompressedTexture2D::6551740413491652174::1744421440::1744422543::1::::<><><>0<>0<>0513156b51da7fedfa55e9fedc9c7f0a<>res://.godot/imported/terreno agua.png-2077118f4dcbbfba6a2a7f95c8becd62.ctex::
+terreno pasto noche.png::CompressedTexture2D/CompressedTexture2D::972272647757220822::1744421440::1744422543::1::::<><><>0<>0<>4b9196e11f84231dd2beff26cd5d4a80<>res://.godot/imported/terreno pasto noche.png-113d719c326defbdc1dff84f577c88cc.ctex::
+terreno piedras escalada.png::CompressedTexture2D/CompressedTexture2D::4280427997092913453::1744421440::1744422543::1::::<><><>0<>0<>29639d67aadacac23ea7e7fc62820f19<>res://.godot/imported/terreno piedras escalada.png-5b97814a3f6f0c17dbf978069b995a23.ctex::
+terreno piedras.png::CompressedTexture2D/CompressedTexture2D::9078783921573801612::1744421440::1744422543::1::::<><><>0<>0<>9ffc511655cacf9e23eb0f3cda27ffce<>res://.godot/imported/terreno piedras.png-14e5695e5cb8d6676f7da25c20c36a57.ctex::
+::res://sprites/characters/::1744419940
 ::res://sprites/characters/Mati/::1744336925
 Barrido Gaucho.png::CompressedTexture2D/CompressedTexture2D::6421896849424594072::1744333270::1744333271::1::::<><><>0<>0<>6fc8e81a3211e14821d4ff025faf2a88<>res://.godot/imported/Barrido Gaucho.png-28fbc63aab39781381ed1f803e6dc160.ctex::
 MODELO DEL GAUCHO CORRIENDO.png::CompressedTexture2D/CompressedTexture2D::5776072144667279033::1744325249::1744325257::1::::<><><>0<>0<>7b696a8941eef4078958162d4f1e0721<>res://.godot/imported/MODELO DEL GAUCHO CORRIENDO.png-6683b878c1838e3582bb04271341f840.ctex::
@@ -63,6 +75,9 @@ Blue_circle.webp::CompressedTexture2D/CompressedTexture2D::3918835160370396807::
 Venado_Infectado atacando.png::CompressedTexture2D/CompressedTexture2D::7476311062708331051::1744326009::1744326017::1::::<><><>0<>0<>97dce0c85cdb1ea3d2868fea8d1a81e2<>res://.godot/imported/Venado_Infectado atacando.png-124cb675fefb01ea201f2425f871fe25.ctex::
 Venao_infectado CAMINANDO.png::CompressedTexture2D/CompressedTexture2D::5734228830111504680::1744326009::1744326017::1::::<><><>0<>0<>3ed634b5fb02200a63e52bb114aa8790<>res://.godot/imported/Venao_infectado CAMINANDO.png-ee49b236fe3a1fd7e384d09fff2e3675.ctex::
 Venao_infectado parado.png::CompressedTexture2D/CompressedTexture2D::8577560689679915431::1744326009::1744326017::1::::<><><>0<>0<>8aa7ec41253fdabe315b8082229269a2<>res://.godot/imported/Venao_infectado parado.png-6be649e8b09a0072b2acfbb02553ae5d.ctex::
+::res://sprites/characters/River/::1744419948
+::res://sprites/characters/River/Fish/::1744419955
+PESCADO RADIACTIVO CHE.png::CompressedTexture2D/CompressedTexture2D::6237607792172868590::1744419952::1744419955::1::::<><><>0<>0<>432381d8585c92f8adf8192db6509425<>res://.godot/imported/PESCADO RADIACTIVO CHE.png-c3527b7f911268054208f4d90eea3613.ctex::
 ::res://sprites/effecs/::1744336925
 smoke.jpg::CompressedTexture2D/CompressedTexture2D::7724913287358903199::1744317514::1744318763::0::::<><><>0<>0<>5cb651800dade26241da269b5489e9e4<>::
 smoke.png::CompressedTexture2D/CompressedTexture2D::9133813500402492947::1744318777::1744318779::1::::<><><>0<>0<>d6c5c9e0827a13cf4721c89c54eaa930<>res://.godot/imported/smoke.png-05ce5d41114a9a53619a60bc0c17eeda.ctex::

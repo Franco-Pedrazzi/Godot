@@ -62,19 +62,7 @@ func _on_area_2d_2_body_entered(body):
 		isMoving=false
 
 		if body.attacking and ((targetPlayer.position.x - position.x)/abs(targetPlayer.position.x - position.x))*-1==body.ExportDirectionX:		
-			if stop == false:
-				lives -= 1
-				animations.play("default")
-				PhysicsAnimations.play("Hurt")
-				var angle=(body.position - position).angle()
-				var direction = Vector2.RIGHT.rotated(angle)  # Mueve hacia la rotación actual
-				velocity = direction * SPEED*-1*300
-				isMoving=false
-				await get_tree().create_timer(0.25).timeout
-				PhysicsAnimations.play("Default")
-				velocity = Vector2i(0,0)
-				await get_tree().create_timer(0.3).timeout
-				isMoving=true
+			hurt(body)
 		else:		
 			isMoving=false 
 			if isColliding and !stop:
@@ -83,10 +71,12 @@ func _on_area_2d_2_body_entered(body):
 				animations.play("Attack")
 				if animations.get_animation() == "Attack" :
 					while animations.is_playing():
-						await get_tree().create_timer(0.2).timeout
 						if body.attacking:
-							_on_area_2d_2_body_entered(body)
+							attaking=false
+							hurt(body)
 							return
+						else:
+							await get_tree().create_timer(0.2).timeout
 					attaking=false
 					animations.play("default")
 					await get_tree().create_timer(0.1).timeout
@@ -100,6 +90,20 @@ func _on_area_2d_2_body_entered(body):
 	else:
 		isMoving=true
 		
+func hurt(body):
+	if stop == false:
+		lives -= 1
+		animations.play("default")
+		PhysicsAnimations.play("Hurt")
+		var angle=(body.position - position).angle()
+		var direction = Vector2.RIGHT.rotated(angle)  # Mueve hacia la rotación actual
+		velocity = direction * SPEED*-1*300
+		isMoving=false
+		await get_tree().create_timer(0.25).timeout
+		PhysicsAnimations.play("Default")
+		velocity = Vector2i(0,0)
+		await get_tree().create_timer(0.3).timeout
+		isMoving=true
 	
 func _on_interaction_area_body_exited(body: Node2D) -> void:
 	stop = true

@@ -1,0 +1,177 @@
+[gd_scene load_steps=22 format=3 uid="uid://8smyftu2ujtr"]
+
+[ext_resource type="Script" uid="uid://drq1phgbjc4sf" path="res://objetos/characters/Fish/fish.gd" id="1_4llin"]
+[ext_resource type="Texture2D" uid="uid://cu4sqvkdipxji" path="res://sprites/characters/River/Fish/PESCADO RADIACTIVO CHE.png" id="2_4llin"]
+
+[sub_resource type="Animation" id="Animation_sae0v"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_rjjjd"]
+resource_name = "Shoot"
+length = 0.21
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disparar"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8mdte"]
+resource_name = "caminar"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_iyvs0"]
+resource_name = "default"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psosv"]
+_data = {
+&"RESET": SubResource("Animation_sae0v"),
+&"Shoot": SubResource("Animation_rjjjd"),
+&"caminar": SubResource("Animation_8mdte"),
+&"default": SubResource("Animation_iyvs0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxvhq"]
+size = Vector2(23.9241, 53.7729)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gm2mo"]
+radius = 15.3485
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1p3w"]
+radius = 80.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ryn"]
+atlas = ExtResource("2_4llin")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4heub"]
+atlas = ExtResource("2_4llin")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52b4g"]
+atlas = ExtResource("2_4llin")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivrb4"]
+atlas = ExtResource("2_4llin")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy6nx"]
+atlas = ExtResource("2_4llin")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1sr7"]
+atlas = ExtResource("2_4llin")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmd1w"]
+atlas = ExtResource("2_4llin")
+region = Rect2(3000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21nyu"]
+atlas = ExtResource("2_4llin")
+region = Rect2(3500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbm71"]
+atlas = ExtResource("2_4llin")
+region = Rect2(4000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf8yn"]
+atlas = ExtResource("2_4llin")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_857kw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ryn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4heub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52b4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivrb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy6nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1sr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmd1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21nyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbm71")
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf8yn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shooter" type="CharacterBody2D"]
+scale = Vector2(1.22229, 1)
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_4llin")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+&"": SubResource("AnimationLibrary_psosv")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3.5)
+scale = Vector2(1.12857, 0.650886)
+shape = SubResource("RectangleShape2D_dxvhq")
+
+[node name="DetectionZone" type="Area2D" parent="."]
+scale = Vector2(3.73572, 2.88257)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+position = Vector2(0, 1)
+scale = Vector2(-16.3302, -23.6495)
+shape = SubResource("CircleShape2D_gm2mo")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+scale = Vector2(8.6548, 9.49052)
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 1.26555)
+shape = SubResource("CircleShape2D_q1p3w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_857kw")
+animation = &"Shoot"
+autoplay = "default"
+frame = 8
+frame_progress = 1.0
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

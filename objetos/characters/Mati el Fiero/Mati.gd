@@ -86,14 +86,12 @@ func _on_interaction_area_body_entered(body):
 		if "DamageType" in body:
 			if body.DamageType=="normalDamage" or body.DamageType=="instantDamage":
 				if body.DamageType!="instantDamage":
-					await get_tree().create_timer(0.5).timeout
-					if body:	
-						if body.animations.get_animation() == "Attack" :
-							while body.animations.is_playing():
-								await get_tree().create_timer(0.2).timeout
-					else:
-						return
-					await get_tree().create_timer(0.5).timeout
+					await get_tree().create_timer(0.1).timeout
+					if body.animations.get_animation() == "Attack" :
+						while body.animations.is_playing():
+							await get_tree().create_timer(0.2).timeout
+					await get_tree().create_timer(0.4).timeout
+				
 				if !cantReceiveDamage and !attacking:
 					cantReceiveDamage = true
 					lives -= 1

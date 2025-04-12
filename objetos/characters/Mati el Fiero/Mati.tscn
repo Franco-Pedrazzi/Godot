@@ -329,6 +329,7 @@ shape = SubResource("RectangleShape2D_iywkl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -74)
+zoom = Vector2(0.5, 0.5)
 
 [node name="liveBox" type="HBoxContainer" parent="."]
 offset_left = 122.0
