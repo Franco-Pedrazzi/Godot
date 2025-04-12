@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2o7cutwc5o8d"]
+[gd_scene load_steps=10 format=3 uid="uid://2o7cutwc5o8d"]
 
 [ext_resource type="PackedScene" uid="uid://cte3h7vo55776" path="res://objetos/Bg/Background.tscn" id="1_0kfh4"]
 [ext_resource type="Script" uid="uid://k12o5wprxrur" path="res://Esenarios/La Pampa/la_pampa.gd" id="1_iri82"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bo2iw730ipj5i" path="res://objetos/characters/Venado/Venado.tscn" id="6_lfqf6"]
 [ext_resource type="PackedScene" uid="uid://8smyftu2ujtr" path="res://objetos/characters/Fish/Fish.tscn" id="7_5ve7k"]
 [ext_resource type="PackedScene" uid="uid://b8tmufkwbbeba" path="res://objetos/boss/boss.tscn" id="7_oafpr"]
+[ext_resource type="AudioStream" uid="uid://c2amo26rcyvfw" path="res://Musica/Sountrack Juego gaucho gameplay.ogg" id="8_5ve7k"]
+[ext_resource type="Texture2D" uid="uid://bjepfnukrawlm" path="res://sprites/Backgrounds/drive-download-20250412T012958Z-001/terreno casa.png" id="9_iwmf8"]
 
 [node name="Nivel 0" type="Node2D"]
 script = ExtResource("1_iri82")
@@ -38,6 +40,24 @@ position = Vector2(784, -200)
 [node name="GPUParticles2D" parent="Venado5" instance=ExtResource("5_oafpr")]
 position = Vector2(738, 47)
 
+[node name="GPUParticles2D" parent="Venado5/GPUParticles2D" instance=ExtResource("5_oafpr")]
+position = Vector2(-362, -585)
+
+[node name="GPUParticles2D" parent="Venado5/GPUParticles2D/GPUParticles2D" instance=ExtResource("5_oafpr")]
+position = Vector2(-216, 817)
+
+[node name="GPUParticles2D" parent="Venado5/GPUParticles2D/GPUParticles2D/GPUParticles2D" instance=ExtResource("5_oafpr")]
+position = Vector2(-269, -615)
+
+[node name="GPUParticles2D" parent="Venado5/GPUParticles2D/GPUParticles2D/GPUParticles2D/GPUParticles2D" instance=ExtResource("5_oafpr")]
+position = Vector2(-323, -386)
+
+[node name="GPUParticles2D" parent="Venado5/GPUParticles2D/GPUParticles2D/GPUParticles2D/GPUParticles2D/GPUParticles2D" instance=ExtResource("5_oafpr")]
+position = Vector2(-665, 1312)
+
+[node name="GPUParticles2D" parent="Venado5/GPUParticles2D/GPUParticles2D/GPUParticles2D/GPUParticles2D/GPUParticles2D/GPUParticles2D" instance=ExtResource("5_oafpr")]
+position = Vector2(-725, -869)
+
 [node name="Venado4" parent="." instance=ExtResource("6_lfqf6")]
 position = Vector2(682, -810)
 
@@ -56,3 +76,107 @@ scale = Vector2(5.10845, 5.16124)
 
 [node name="Shooter" parent="." instance=ExtResource("7_5ve7k")]
 position = Vector2(-5075, -157)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5ve7k")
+volume_db = -8.139
+autoplay = true
+
+[node name="decoraciones" type="Node" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="decoraciones"]
+position = Vector2(-1707, -823)
+scale = Vector2(-0.442541, 0.455697)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="decoraciones"]
+position = Vector2(-1567, -935)
+rotation = 0.082448
+scale = Vector2(0.364123, 0.414395)
+texture = ExtResource("9_iwmf8")
+
+[node name="TextureRect" type="TextureRect" parent="decoraciones"]
+offset_left = -3266.0
+offset_top = -2062.0
+offset_right = 830.0
+offset_bottom = 2034.0
+scale = Vector2(0.306045, 0.47555)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones"]
+position = Vector2(-954, -1421)
+rotation = 0.042647
+scale = Vector2(-0.335303, 0.278778)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones/Sprite2D3"]
+position = Vector2(-7867.47, 386.077)
+rotation = 0.042647
+scale = Vector2(-1.13647, 1.23965)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="decoraciones"]
+position = Vector2(-2227, -1703)
+rotation = 0.042647
+scale = Vector2(-0.398139, 0.38581)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones/Sprite2D4"]
+position = Vector2(-7867.47, 386.077)
+rotation = 0.042647
+scale = Vector2(-1.13647, 1.23965)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="decoraciones"]
+position = Vector2(-384, -1163)
+rotation = 0.042647
+scale = Vector2(-0.398139, 0.38581)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones/Sprite2D5"]
+position = Vector2(-7867.47, 386.077)
+rotation = 0.042647
+scale = Vector2(-1.13647, 1.23965)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D6" type="Sprite2D" parent="decoraciones"]
+position = Vector2(1307, 644)
+rotation = 0.042647
+scale = Vector2(0.332961, -0.398827)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones/Sprite2D6"]
+position = Vector2(-8950.41, 1377.65)
+rotation = 0.042647
+scale = Vector2(-1.13647, 1.23965)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D7" type="Sprite2D" parent="decoraciones"]
+position = Vector2(81, 812)
+rotation = 0.042647
+scale = Vector2(0.395357, -0.551951)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones/Sprite2D7"]
+position = Vector2(-7249.31, 2271.85)
+rotation = 0.042647
+scale = Vector2(-0.780145, 0.772457)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D8" type="Sprite2D" parent="decoraciones"]
+position = Vector2(2193, 424)
+rotation = 0.042647
+scale = Vector2(0.395357, -0.551951)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="decoraciones/Sprite2D8"]
+position = Vector2(-8543.19, 830.537)
+rotation = 0.042647
+scale = Vector2(1.15108, 0.627917)
+texture = ExtResource("9_iwmf8")
+
+[node name="Sprite2D9" type="Sprite2D" parent="decoraciones"]
+position = Vector2(1811, 393)
+rotation = 0.042647
+scale = Vector2(-0.363356, -0.459813)
+texture = ExtResource("9_iwmf8")

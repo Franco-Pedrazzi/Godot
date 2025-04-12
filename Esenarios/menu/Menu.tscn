@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg7c2b6816rr3"]
+[gd_scene load_steps=4 format=3 uid="uid://bg7c2b6816rr3"]
 
 [ext_resource type="Script" uid="uid://c47l3oybtlofk" path="res://Esenarios/menu/menu.gd" id="1_0x6pj"]
 [ext_resource type="Texture2D" uid="uid://tqxvqdmrxlv1" path="res://sprites/Backgrounds/Menu.png" id="2_uaed2"]
+[ext_resource type="AudioStream" uid="uid://cjx7g7dtkv40n" path="res://Musica/Sountrack menu.ogg" id="3_0xg6j"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,5 +37,9 @@ text = "Play"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1021, 1026)
 anchor_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0xg6j")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
