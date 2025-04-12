@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tmvkf0yarx0u"
+path="res://.godot/imported/Sountrack Boss1.ogg-f726213c93b6cedc7c4272cfdcc12933.oggvorbisstr"
+
+[deps]
+
+source_file="res://Musica/Sountrack Boss1.ogg"
+dest_files=["res://.godot/imported/Sountrack Boss1.ogg-f726213c93b6cedc7c4272cfdcc12933.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

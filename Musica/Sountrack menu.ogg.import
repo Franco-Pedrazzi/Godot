@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjx7g7dtkv40n"
+path="res://.godot/imported/Sountrack menu.ogg-1a427d8eff74b563da65f05b7d979592.oggvorbisstr"
+
+[deps]
+
+source_file="res://Musica/Sountrack menu.ogg"
+dest_files=["res://.godot/imported/Sountrack menu.ogg-1a427d8eff74b563da65f05b7d979592.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

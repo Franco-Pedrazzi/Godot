@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2amo26rcyvfw"
+path="res://.godot/imported/Sountrack Juego gaucho gameplay.ogg-3ada38fc69e0d7025545374b629052cc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Musica/Sountrack Juego gaucho gameplay.ogg"
+dest_files=["res://.godot/imported/Sountrack Juego gaucho gameplay.ogg-3ada38fc69e0d7025545374b629052cc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
